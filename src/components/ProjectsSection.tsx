@@ -6,177 +6,85 @@ import { ExternalLink, Github } from "lucide-react";
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Dashboard de Vendas E-commerce",
-      description: "Análise completa de vendas com identificação de tendências, sazonalidade e otimização de estoque usando Power BI e SQL.",
-      category: "Business Intelligence",
-      tags: ["Power BI", "SQL", "DAX", "Python"],
-      demoUrl: "#",
-      githubUrl: "#",
+      title: "Análise de Tickets de Suporte Técnico",
+      description: "Desenvolvi um pipeline de dados para limpeza, organização e enriquecimento de tickets de suporte técnico, transformando dados brutos em informações estruturadas para análise.",
+      category: "Python | Exploração de Dados (EDA) | Power BI",
+      tags: ["Python", "Pandas", "SQL", "Seaborn", "Matplotlib", "Data Visualization", "Storytelling "],
+      demoUrl: "https://github.com/dataPalacio/support-tickets-analytics/blob/main/notebooks/data_explorer.ipynb",
+      githubUrl: "https://github.com/dataPalacio/support-tickets-analytics",
       featured: true
     },
+    
     {
-      title: "Modelo Preditivo de Churn",
-      description: "Machine Learning para predição de cancelamento de clientes com 87% de precisão, gerando economia de R$ 2M anuais.",
-      category: "Machine Learning",
-      tags: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
-      demoUrl: "#",
-      githubUrl: "#",
+      title: "Análise de Dados do FIFA 19",
+      description: "Desenvolvi um projeto de análise de dados com foco em visualização e storytelling, aplicando técnicas de limpeza, transformação e análise estatística em dados esportivos.",
+      category: "Python | Exploração de Dados (EDA)",
+      tags: ["Power BI", "Python", "Seaborn", "Matplotlib", "Data Visualization", "Storytelling"],
+      demoUrl: "https://github.com/dataPalacio/proj-fifa19/blob/main/notebook/fifa19_analise.ipynb",
+      githubUrl: "https://github.com/dataPalacio/proj-fifa19",
       featured: true
     },
-    {
-      title: "ETL Pipeline - Dados Financeiros",
-      description: "Pipeline automatizado para processamento de dados financeiros em tempo real com validações e alertas.",
-      category: "Data Engineering",
-      tags: ["Python", "Apache Airflow", "PostgreSQL", "Docker"],
-      demoUrl: "#",
-      githubUrl: "#",
-      featured: false
-    },
-    {
-      title: "Análise de Sentimento - Redes Sociais",
-      description: "Monitoramento de sentiment analysis para marca usando NLP e visualização de insights em tempo real.",
-      category: "NLP & Analytics",
-      tags: ["Python", "NLTK", "Streamlit", "MongoDB"],
-      demoUrl: "#",
-      githubUrl: "#",
-      featured: false
-    },
-    {
-      title: "Otimização de Campanha Marketing",
-      description: "A/B testing e análise estatística para otimização de campanhas de marketing digital com ROI melhorado.",
-      category: "Marketing Analytics",
-      tags: ["R", "Statistical Analysis", "Tableau", "Google Analytics"],
-      demoUrl: "#",
-      githubUrl: "#",
-      featured: false
-    },
-    {
-      title: "Dashboard COVID-19 Brasil",
-      description: "Visualização interativa dos dados da pandemia no Brasil com análises epidemiológicas e projeções.",
-      category: "Public Health",
-      tags: ["Python", "Plotly", "Dash", "Pandas"],
-      demoUrl: "#",
-      githubUrl: "#",
-      featured: false
-    }
   ];
 
-  const getCategoryColor = (category: string) => {
-    const colors: Record<string, string> = {
-      "Business Intelligence": "tech-green",
-      "Machine Learning": "tech-blue", 
-      "Data Engineering": "data-purple",
-      "NLP & Analytics": "chart-orange",
-      "Marketing Analytics": "tech-green",
-      "Public Health": "tech-blue"
-    };
-    return colors[category] || "tech-green";
-  };
-
   return (
-    <section className="py-20 px-4 bg-muted/30" id="projects">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-foreground">Meus</span>{" "}
-            <span className="text-gradient-primary">Projetos</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Soluções reais que transformaram dados em valor de negócio
-          </p>
-        </div>
-
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+    <section className="py-20 px-4 bg-background relative overflow-hidden" id="projects">
+      <div className="absolute inset-0 bg-gradient-hero"></div>
+      <div className="absolute top-20 right-10 w-72 h-72 bg-tech-green/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-tech-blue/10 rounded-full blur-3xl"></div>
+      <div className="max-w-7xl mx-auto relative">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+          <span className="text-foreground">Meus</span>{" "}
+          <span className="text-gradient-primary">Projetos</span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card 
+            <Card
               key={index}
-              className={`bg-gradient-card border-border/50 shadow-card hover-glow animate-scale-in group ${
-                project.featured ? 'md:col-span-2 lg:col-span-1' : ''
-              }`}
+              className="bg-gradient-card border-border/50 shadow-card hover-glow animate-scale-in group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardHeader>
-                <div className="flex items-start justify-between mb-3">
-                  <Badge 
-                    variant="secondary" 
-                    className={`text-${getCategoryColor(project.category)} bg-background/50`}
-                  >
-                    {project.category}
-                  </Badge>
-                  {project.featured && (
-                    <Badge className="bg-gradient-primary text-primary-foreground">
-                      Destaque
-                    </Badge>
-                  )}
+              <CardHeader className="pb-4">
+                <div className="flex flex-col space-y-2">
+                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                  <span className="text-sm text-muted-foreground">{project.category}</span>
                 </div>
-                <CardTitle className="text-xl group-hover:text-gradient-primary transition-all duration-300">
-                  {project.title}
-                </CardTitle>
               </CardHeader>
-              
               <CardContent className="space-y-6">
-                <p className="text-muted-foreground leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
+                <p className="text-muted-foreground leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
-                    <Badge 
-                      key={tagIndex} 
-                      variant="outline" 
-                      className="text-xs"
-                    >
+                    <Badge key={tagIndex} variant="outline" className="text-xs">
                       {tag}
                     </Badge>
                   ))}
                 </div>
-
-
-                {/* Action Buttons */}
-                <div className="flex gap-3">
-                  <Button 
-                    size="sm" 
-                    className="flex-1 bg-gradient-primary text-primary-foreground hover-glow"
-                  >
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Ver Demo
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
+                <div className="flex gap-3 w-full">
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1"
                   >
-                    <Github className="h-4 w-4 mr-2" />
-                    GitHub
-                  </Button>
+                    <Button size="sm" className="w-full bg-gradient-primary text-primary-foreground hover-glow">
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Saiba Mais
+                    </Button>
+                  </a>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
+                    <Button variant="outline" size="sm" className="w-full">
+                      <Github className="h-4 w-4 mr-2" />
+                      GitHub
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center animate-slide-up">
-          <Card className="bg-gradient-card border-border/50 shadow-card max-w-2xl mx-auto">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4 text-gradient-primary">
-                Quer ver mais projetos?
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                Visite meu perfil no GitHub para explorar todos os projetos e contribuições open source.
-              </p>
-              <Button 
-                size="lg" 
-                className="bg-gradient-primary text-primary-foreground hover-glow"
-              >
-                <Github className="h-5 w-5 mr-2" />
-                Visitar GitHub
-              </Button>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>

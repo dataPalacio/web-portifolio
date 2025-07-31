@@ -1,19 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Github, Linkedin, Mail, Download, ExternalLink, BarChart3, Database, TrendingUp } from "lucide-react";
+import { Github, Linkedin, Mail, Download, ExternalLink, BarChart3, Database, TrendingUp, FileText, Newspaper, Award } from "lucide-react";
 
 const HeroSection = () => {
   const socialLinks = [
-    { icon: Github, href: "https://github.com/gustavo-palacio", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/gustavo-palacio", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:gustavo@datapalacio.com", label: "Email" },
+    { icon: Github, href: "https://github.com/dataPalacio", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/gfpalacio/", label: "LinkedIn" },
+    { icon: FileText, href: "https://medium.com/@datapalacio", label: "Medium" },
+    { icon: Mail, href: "mailto:palacio.dados@gmail.com", label: "Email" },
   ];
 
   const stats = [
-    { icon: BarChart3, number: "12+", label: "Projetos", color: "text-tech-green" },
-    { icon: Database, number: "8", label: "Certificações", color: "text-tech-blue" },
-    { icon: TrendingUp, number: "15+", label: "Ferramentas", color: "text-data-purple" },
+    { icon: BarChart3, number: "2", label: "Projetos", color: "text-tech-green" },
+    { icon: Award, number: "4", label: "Certificações", color: "text-tech-blue" },
+    { icon: Newspaper, number: "2", label: "Artigos", color: "text-data-purple" },
   ];
 
   return (
@@ -49,28 +50,23 @@ const HeroSection = () => {
 
             {/* Description */}
             <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
-              Especialista em análise de dados com foco em Python, SQL e Power BI. 
-              Experiência em transformar dados complexos em soluções de negócio 
-              que geram valor real para organizações.
+              De engenheiro civil a analista de dados, focado em aplicar conhecimentos em Python, SQL e Power BI para resolver desafios estratégicos.
+
+
             </p>
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="bg-gradient-primary hover-glow text-primary-foreground font-semibold"
-              >
-                Ver Projetos
-                <ExternalLink className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="hover-glow"
-              >
-                <Download className="mr-2 h-5 w-5" />
-                Download CV
-              </Button>
+              <a href="https://drive.google.com/file/d/1FjjUyDjE1GLQTxPqRWggAr06aL7gaAwK/view?usp=sharing" download className="inline-block">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="hover-glow"
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download CV
+                </Button>
+              </a>
             </div>
 
             {/* Social Links */}
@@ -117,7 +113,7 @@ const HeroSection = () => {
                 
                 <div className="mt-8 p-4 bg-background/30 rounded-lg border border-border/30">
                   <p className="text-sm text-muted-foreground">
-                    "Dados são o novo petróleo, mas insights são a gasolina refinada."
+                    "Muitas vezes, a resposta não está em algoritmos complexos de Machine Learning, mas na atitude de investigar profundamente as causas raízes, com uma abordagem proativa"
                   </p>
                   <p className="text-xs text-muted-foreground/70 mt-2">
                     - Gustavo Palacio

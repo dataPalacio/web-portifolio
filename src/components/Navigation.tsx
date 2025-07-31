@@ -15,9 +15,9 @@ const Navigation = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/gustavo-palacio", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/gustavo-palacio", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:gustavo@datapalacio.com", label: "Email" },
+    { icon: Github, href: "https://github.com/dataPalacio", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/gfpalacio/", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:palacio.dados@gmail.com", label: "Email" },
   ];
 
   return (
@@ -40,6 +40,14 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = document.querySelector(item.href);
+                  if (target) {
+                    target.scrollIntoView({ behavior: "smooth" });
+                  }
+                  setIsOpen(false);
+                }}
                 className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
               >
                 {item.name}
@@ -47,7 +55,7 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Social Links & CTA */}
+          {/* Social Links */}
           <div className="hidden md:flex items-center space-x-4">
             {socialLinks.map((social) => (
               <a
@@ -60,10 +68,6 @@ const Navigation = () => {
                 <social.icon className="h-5 w-5" />
               </a>
             ))}
-            <Button variant="outline" size="sm" className="hover-glow">
-              <Download className="h-4 w-4 mr-2" />
-              Download CV
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -87,8 +91,15 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(item.href);
+                    if (target) {
+                      target.scrollIntoView({ behavior: "smooth" });
+                    }
+                    setIsOpen(false);
+                  }}
                   className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-200 font-medium"
-                  onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </a>
@@ -105,12 +116,6 @@ const Navigation = () => {
                     <social.icon className="h-5 w-5" />
                   </a>
                 ))}
-              </div>
-              <div className="pt-4">
-                <Button variant="outline" size="sm" className="w-full">
-                  <Download className="h-4 w-4 mr-2" />
-                  Download CV
-                </Button>
               </div>
             </div>
           </div>

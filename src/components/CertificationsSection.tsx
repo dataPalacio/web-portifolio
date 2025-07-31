@@ -6,80 +6,52 @@ import { ExternalLink, CheckCircle, Calendar, Award, TrendingUp } from "lucide-r
 const CertificationsSection = () => {
   const certifications = [
     {
-      title: "Microsoft Certified: Data Analyst Associate",
-      issuer: "Microsoft",
+      title: "Análise de dados com linguagem Python",
+      issuer: "Data Science Academy",
       date: "2024",
-      skills: ["Power BI", "DAX", "Power Query", "Data Modeling"],
+      skills: ["Python for Data Analysis", "Data Cleaning", "Scripting"],
       status: "verified",
-      credentialUrl: "#",
+      credentialUrl: "https://mycourse.app/VpSaV2qkmrNh8Qv39",
     },
     {
-      title: "Google Data Analytics Professional Certificate",
-      issuer: "Google",
-      date: "2023",
-      skills: ["R Programming", "Tableau", "SQL", "Data Cleaning"],
+      title: "Análise de dados com Power BI e clínica de BI",
+      issuer: "Data Science Academy",
+      date: "2024",
+      skills: ["Dashboards", "ETL", "Power Query", "Data Modeling"],
       status: "verified", 
-      credentialUrl: "#",
+      credentialUrl: "https://mycourse.app/DD6BsHZCsjLsQUHe8",
     },
     {
-      title: "AWS Certified Cloud Practitioner",
-      issuer: "Amazon Web Services",
-      date: "2024",
-      skills: ["AWS", "Cloud Computing", "Data Storage"],
-      status: "verified",
-      credentialUrl: "#"
-    },
-    {
-      title: "Python for Data Science and AI",
-      issuer: "IBM",
+      title: "SQL para data science",
+      issuer: "Data Science Academy",
       date: "2023",
-      skills: ["Python", "Pandas", "NumPy", "Matplotlib"],
+      skills: ["Queries", "Data Extraction", "CTEs", "Window Functions"],
       status: "verified",
-      credentialUrl: "#"
+      credentialUrl: "https://drive.google.com/file/d/1volYmdkCYaAU-Kmm1I17fgkPRHrZoEhg/view?usp=sharing"
     },
     {
-      title: "SQL for Data Science",
-      issuer: "University of California, Davis",
-      date: "2023",
-      skills: ["SQL", "Database Management", "Query Optimization"],
+      title: "Santander - Excel com Inteligência Artificial",
+      issuer: "Santander",
+      date: "2025",
+      skills: ["Excel Data Analysis", "Business Intelligence", "Dashboards", "Pivot Tables"],
       status: "verified",
-      credentialUrl: "#"
+      credentialUrl: "https://drive.google.com/file/d/1wF6DbF_Q3vdHP52idn3mS7OsBiALgQnQ/view?usp=sharing"
     },
-    {
-      title: "Machine Learning Specialization",
-      issuer: "Stanford University",
-      date: "2023",
-      skills: ["Machine Learning", "Deep Learning", "Neural Networks"],
-      status: "verified",
-      credentialUrl: "#"
-    },
-    {
-      title: "Tableau Desktop Specialist",
-      issuer: "Tableau",
-      date: "2022",
-      skills: ["Tableau", "Data Visualization", "Dashboard Design"],
-      status: "verified",
-      credentialUrl: "#"
-    },
-    {
-      title: "Advanced Excel for Business",
-      issuer: "Macquarie University",
-      date: "2022",
-      skills: ["Excel", "VBA", "Financial Modeling", "Data Analysis"],
-      status: "verified",
-      credentialUrl: "#"
-    }
   ];
 
   const stats = [
-    { icon: Award, number: "8", label: "Certificações", color: "text-tech-green" },
+    { icon: Award, number: "4", label: "Certificações", color: "text-tech-green" },
     
-    { icon: TrendingUp, number: "2024", label: "Última", color: "text-tech-blue" },
+    { icon: TrendingUp, number: "2025", label: "Última", color: "text-tech-blue" },
   ];
 
   return (
-    <section className="py-20 px-4 bg-muted/30" id="certifications">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4 relative overflow-hidden" id="certifications">
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Background Effects copied from HeroSection.tsx */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[120%] h-[150%] rounded-full bg-gradient-to-tr from-tech-pink via-tech-purple to-tech-blue opacity-20 blur-[100px] animate-blob mix-blend-multiply pointer-events-none"></div>
+        <div className="absolute bottom-0 right-1/2 translate-x-1/2 translate-y-1/3 w-[110%] h-[140%] rounded-full bg-gradient-to-tr from-tech-blue via-tech-green to-tech-pink opacity-20 blur-[100px] animate-blob animation-delay-2000 mix-blend-multiply pointer-events-none"></div>
+        <div className="absolute top-1/2 left-0 translate-x-0 -translate-y-1/2 w-[100%] h-[100%] rounded-full bg-gradient-to-tr from-tech-purple via-tech-pink to-tech-green opacity-10 blur-[150px] animate-blob animation-delay-4000 mix-blend-multiply pointer-events-none"></div>
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -87,7 +59,7 @@ const CertificationsSection = () => {
             <span className="text-gradient-primary">Qualificações</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Formação contínua e certificações que validam minha expertise em análise de dados
+            Certificado, preparado e pronto pra transformar números em soluções de verdade.
           </p>
         </div>
 
@@ -141,13 +113,16 @@ const CertificationsSection = () => {
                       </div>
 
                       {/* Credential Button */}
-                      <Button 
-                        variant="ghost" 
-                        size="sm" 
-                        className="w-full text-primary hover:text-primary-foreground hover:bg-primary"
-                      >
-                        <ExternalLink className="h-3 w-3 mr-2" />
-                        Acesse minha certificação
+                      <Button asChild variant="ghost" size="sm" className="w-full text-primary hover:text-primary-foreground hover:bg-primary">
+                        <a
+                          href={cert.credentialUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center w-full justify-center"
+                        >
+                          <ExternalLink className="h-3 w-3 mr-2" />
+                          Acesse minha certificação
+                        </a>
                       </Button>
                     </CardContent>
                   </Card>
@@ -184,17 +159,25 @@ const CertificationsSection = () => {
                 <div className="mt-8 p-4 bg-background/30 rounded-lg border border-border/30">
                   <h4 className="font-semibold mb-2 text-foreground">Próximos Objetivos</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Snowflake Data Analyst</li>
-                    <li>• Databricks Certified Associate</li>
-                    <li>• Azure Data Scientist Associate</li>
+                    <li>• n8n + Cursor</li>
+                    <li>• Machine Learning</li>
+                    <li>• Data Warehouse </li>
                   </ul>
                 </div>
 
-                <Button 
+                <Button
+                  asChild
                   className="w-full bg-gradient-primary text-primary-foreground hover-glow"
                 >
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  Ver Todas no LinkedIn
+                  <a
+                    href="https://www.linkedin.com/in/gfpalacio/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center bg-gradient-primary text-primary-foreground hover-glow px-4 py-2 rounded"
+                  >
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Ver Todas no LinkedIn
+                  </a>
                 </Button>
               </CardContent>
             </Card>

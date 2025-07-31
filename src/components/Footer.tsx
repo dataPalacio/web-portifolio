@@ -14,19 +14,19 @@ const Footer = () => {
   const socialLinks = [
     { 
       icon: Github, 
-      href: "https://github.com/gustavo-palacio", 
+      href: "https://github.com/dataPalacio", 
       label: "GitHub",
       description: "Projetos e código"
     },
     { 
       icon: Linkedin, 
-      href: "https://linkedin.com/in/gustavo-palacio", 
+      href: "https://www.linkedin.com/in/gfpalacio/", 
       label: "LinkedIn",
       description: "Rede profissional"
     },
     { 
       icon: Mail, 
-      href: "mailto:gustavo@datapalacio.com", 
+      href: "mailto:palacio.dados@gmail.com", 
       label: "Email",
       description: "Contato direto"
     },
@@ -47,9 +47,7 @@ const Footer = () => {
                 Data Palacio
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Portfolio de Gustavo Palacio - Analista de Dados especializado em 
-                transformar dados complexos em insights estratégicos que geram valor 
-                real para organizações.
+                Dados não mentem, eles apenas revelam a verdade escondida.
               </p>
             </div>
             
@@ -78,20 +76,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Navigation */}
-          <div className="space-y-6">
-            <h4 className="font-semibold text-foreground">Navegação Rápida</h4>
-            <nav className="space-y-3">
-              {quickLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="block text-muted-foreground hover:text-primary transition-colors duration-200"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </nav>
-          </div>
+          {/* A seção "Navegação Rápida" foi removida conforme solicitado */}
 
           {/* Contact Info */}
           <div className="space-y-6">
@@ -108,15 +93,10 @@ const Footer = () => {
                 <MapPin className="h-4 w-4" />
                 <div>
                   <div className="text-sm">Localização</div>
-                  <div className="text-xs">São Paulo, SP - Brasil</div>
+                  <div className="text-xs">Natal, RN - Brasil</div>
                 </div>
               </div>
               <div className="flex items-center space-x-3 text-muted-foreground">
-                <Phone className="h-4 w-4" />
-                <div>
-                  <div className="text-sm">Status</div>
-                  <div className="text-xs text-success-green">Disponível para projetos</div>
-                </div>
               </div>
             </div>
           </div>
@@ -128,7 +108,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
             <p className="text-sm text-muted-foreground">
-              © 2024 Data Palacio. Todos os direitos reservados.
+              © 2025 Data Palacio. Todos os direitos reservados.
             </p>
             <div className="flex items-center space-x-4 text-xs text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">

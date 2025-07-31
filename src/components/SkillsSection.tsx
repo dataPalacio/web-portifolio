@@ -7,13 +7,13 @@ const SkillsSection = () => {
     {
       name: "Python",
       icon: Code,
-      description: "Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn",
+      description: "Pandas, NumPy, Matplotlib, Seaborn, Selenium",
       color: "tech-green",
     },
     {
       name: "SQL",
       icon: Database,
-      description: "MySQL, PostgreSQL, SQL Server, consultas complexas",
+      description: "MySQL, PostgreSQL, CASE WHEN, CTEs, Views",
       color: "tech-blue",
     },
     {
@@ -22,17 +22,35 @@ const SkillsSection = () => {
       description: "Dashboards interativos, DAX, Power Query, modelagem",
       color: "data-purple",
     },
+    {
+      name: "Microsoft Excel",
+      icon: BarChart3,
+      description: "Dashboards interativos, Power Query, Tabelas Dinamicas",
+      color: "data-red",
+    },
   ];
 
   const tools = [
-    "R Programming", "Apache Spark", "Docker", "Git/GitHub", 
-    "Jupyter Notebook", "Google Analytics", "Looker Studio", 
-    "MongoDB", "Airflow", "AWS", "Google Cloud", "Figma"
+    "Git/GitHub", "Jupyter Notebook", "Figma", 'LLMs', 'n8n'
   ];
 
   return (
-    <section className="py-20 px-4 bg-background" id="skills">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4 bg-background relative isolate overflow-hidden" id="skills">
+      <div className="max-w-7xl mx-auto relative">
+        {/* Background effects from HeroSection */}
+        <div
+          className="absolute inset-0 -z-10 blur-3xl"
+          aria-hidden="true"
+        >
+          <div
+            className="bg-gradient-to-tr from-primary/40 via-secondary/40 to-accent/40 opacity-30 animate-blob rounded-full w-[600px] h-[600px] top-[-100px] left-[50%] translate-x-[-50%] absolute"
+            style={{ filter: "blur(100px)" }}
+          />
+          <div
+            className="bg-gradient-to-br from-secondary/30 via-primary/30 to-accent/30 opacity-20 animate-blob animation-delay-4000 rounded-full w-[800px] h-[800px] bottom-[-150px] right-[10%] absolute"
+            style={{ filter: "blur(150px)" }}
+          />
+        </div>
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -40,7 +58,7 @@ const SkillsSection = () => {
             <span className="text-foreground">Skills</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Tecnologias e ferramentas que domino para entregar soluções de dados de alta qualidade
+            Futuro analista de dados em formação, com domínio inicial em Python, SQL e Power BI. Busco oportunidades para evoluir minhas habilidades técnicas e contribuir em projetos reais.
           </p>
         </div>
 
