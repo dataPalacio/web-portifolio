@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Github, Linkedin, Mail, Download, ExternalLink, BarChart3, Database, TrendingUp, FileText, Newspaper, Award } from "lucide-react";
+import { Github, Linkedin, Mail, Download, ExternalLink, BarChart3, Database, TrendingUp, FileText, Newspaper, Award, Hourglass } from "lucide-react";
 
 const HeroSection = () => {
   const socialLinks = [
@@ -14,7 +14,7 @@ const HeroSection = () => {
   const stats = [
     { icon: BarChart3, number: "2", label: "Projetos", color: "text-tech-green" },
     { icon: Award, number: "4", label: "Certificações", color: "text-tech-blue" },
-    { icon: Newspaper, number: "2", label: "Artigos", color: "text-data-purple" },
+    { icon: Hourglass, number: "244", label: "Horas de estudo", color: "text-data-purple" },
   ];
 
   return (
@@ -57,7 +57,7 @@ const HeroSection = () => {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://drive.google.com/file/d/1FjjUyDjE1GLQTxPqRWggAr06aL7gaAwK/view?usp=sharing" download className="inline-block">
+              <a href="https://drive.google.com/file/d/13YajMZt8RkXZIoPzmzT6jjWkndZ6DEwH/view?usp=sharing" download className="inline-block">
                 <Button
                   variant="outline"
                   size="lg"

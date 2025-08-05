@@ -1,73 +1,58 @@
-# Welcome to your Lovable project
+# Deploy do Projeto no GitHub Pages
 
-## Project info
+Este documento descreve como fazer o deploy do projeto no GitHub Pages, garantindo que a publicação funcione corretamente.
 
-**URL**: https://lovable.dev/projects/d4dfa810-703e-466f-aae7-487fed63ef5f
+## Passos para Deploy
 
-## How can I edit this code?
+1. Certifique-se de que todas as alterações estejam commitadas e pushadas no branch principal (ex: main).
 
-There are several ways of editing your application.
+2. Execute o comando para deploy completo:
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/d4dfa810-703e-466f-aae7-487fed63ef5f) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+npm run deploy:full
 ```
 
-**Edit a file directly in GitHub**
+Este comando irá:
+- Deletar a branch local `gh-pages` se existir para evitar conflitos.
+- Gerar o build do projeto.
+- Publicar a pasta `dist` na branch `gh-pages`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. No GitHub, vá para as configurações do repositório:
 
-**Use GitHub Codespaces**
+- Acesse `Settings` > `Pages`.
+- Configure a fonte para a branch `gh-pages` e a pasta raiz (`/`).
+- Salve as configurações.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+4. Aguarde alguns minutos para o GitHub Pages atualizar a publicação.
 
-## What technologies are used for this project?
+5. Acesse a URL:
 
-This project is built with:
+```
+https://datapalacio.github.io/web-portifolio/
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Diagnóstico de Problemas
 
-## How can I deploy this project?
+- Se a página continuar branca, verifique no console do navegador se há erros de carregamento de arquivos (404) ou erros de JavaScript.
+- Verifique se o arquivo `index.html` na branch `gh-pages` contém os caminhos corretos para os recursos, prefixados com `/web-portifolio/`.
+- Para testar localmente o build, use:
 
-Simply open [Lovable](https://lovable.dev/projects/d4dfa810-703e-466f-aae7-487fed63ef5f) and click on Share -> Publish.
+```bash
+npm run preview
+```
 
-## Can I connect a custom domain to my Lovable project?
+Isso serve o conteúdo da pasta `dist` localmente para testes.
 
-Yes, you can!
+## Considerações
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- O arquivo `vite.config.ts` está configurado com a base correta para o GitHub Pages:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```ts
+base: '/web-portifolio/',
+```
+
+- O script de deploy no `package.json` está configurado para publicar a pasta `dist` na branch `gh-pages`.
+
+- Não modifique manualmente os arquivos na branch `gh-pages`, sempre use o script de deploy para garantir consistência.
+
+Se precisar de ajuda adicional, estou à disposição.

@@ -19,14 +19,14 @@ const SkillsSection = () => {
     {
       name: "Power BI",
       icon: BarChart3,
-      description: "Dashboards interativos, DAX, Power Query, modelagem",
+      description: "Dashboards interativos, DAX, Power Query, Modelagem",
       color: "data-purple",
     },
     {
       name: "Microsoft Excel",
       icon: BarChart3,
       description: "Dashboards interativos, Power Query, Tabelas Dinamicas",
-      color: "data-red",
+      color: "text-accent",
     },
   ];
 

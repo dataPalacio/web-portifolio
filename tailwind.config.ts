@@ -69,6 +69,7 @@ export default {
 				'tech-green': 'hsl(var(--tech-green))',
 				'tech-blue': 'hsl(var(--tech-blue))',
 				'data-purple': 'hsl(var(--data-purple))',
+				'data-yellow': 'hsl(var(--data-yellow))',
 				'chart-orange': 'hsl(var(--chart-orange))',
 				'success-green': 'hsl(var(--success-green))'
 			},
