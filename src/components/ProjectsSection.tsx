@@ -6,6 +6,15 @@ import { ExternalLink, Github } from "lucide-react";
 const ProjectsSection = () => {
   const projects = [
     {
+      title: "Painel Geral de Atendimentos | STI - IPRN",
+      description: "Dashboard desenvolvido para tornar visíveis os números de atendimentos dos setores de informática de uma Instituição Pública do Rio Grande do Norte.",
+      category: "Power BI | Dashboard",
+      tags: ["Power BI", "DAX", "Visualização"],
+      demoUrl: "/projects/ti-data-analysis/index.html", // Correção: Removemos 'public' do caminho
+      githubUrl: "",
+      featured: true
+    },
+    {
       title: "Análise de Tickets de Suporte Técnico",
       description: "Desenvolvi um pipeline de dados para limpeza, organização e enriquecimento de tickets de suporte técnico, transformando dados brutos em informações estruturadas para análise.",
       category: "Python | Exploração de Dados (EDA) | Power BI",
