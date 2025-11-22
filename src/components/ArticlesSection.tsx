@@ -20,15 +20,6 @@ const ArticlesSection = () => {
       url: "https://datapalacio.medium.com/transformando-dados-em-decis%C3%B5es-otimizando-o-suporte-t%C3%A9cnico-com-an%C3%A1lise-de-dados-25b005102404",
       imageUrl: "https://www.criarmeme.com.br/meme/meme-68773-JA--ABRIU-CHAMADO.jpg",
       featured: false
-    },
-    {
-      title: "Artigo em breve",
-      excerpt: "Lorem ipsum dolor sit amet. Sit fugiat expedita aut corporis omnis non inventore dolorem et natus recusandae aut Quis animi aut laudantium quam ut labore eligendi. Aut dolor quae non expedita sunt et neque galisum et iusto beatae.",
-      category: "Categoria Exemplo",
-      tags: ["Tag1", "Tag2"],
-      url: "#",
-      imageUrl: "https://freepngimg.com/save/11420-coming-soon-png-file/659x170",
-      featured: false
     }
   ];
 

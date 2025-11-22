@@ -11,7 +11,7 @@ const ProjectsSection = () => {
       category: "Power BI | Dashboard",
       tags: ["Power BI", "DAX", "Visualização"],
       demoUrl: "/projects/ti-data-analysis/index.html", // Correção: Removemos 'public' do caminho
-      githubUrl: "",
+      githubUrl: "https://github.com/dataPalacio/ti-data-analysis",
       featured: true
     },
     {
